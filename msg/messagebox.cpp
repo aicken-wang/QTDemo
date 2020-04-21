@@ -49,23 +49,34 @@ void CustomMessageBox::setTextInfo(CUSTOM_MESSAGE_TYPE type, const QString &strT
 
      m_eCustomType = type;
      QString fileName;
-     switch(m_eCustomType){
-     case CUSTOM_MESSAGE_CONFIRM:{
+     switch(m_eCustomType)
+     {
+     case CUSTOM_MESSAGE_CONFIRM:
+     {
          fileName = ":/img/confirm.png";
          break;
      }
      case CUSTOM_MESSAGE_QUESTION:
+     {
          fileName = ":/img/question.png";
          break;
+     }
      case CUSTOM_MESSAGE_INFORMATION:
+     {
          fileName = ":/img/information.png";
          break;
+     }
      case CUSTOM_MESSAGE_WARNING:
+     {
          fileName = ":/img/warning.png";
          break;
+     }
+
      case CUSTOM_MESSAGE_CRITICAL:
+     {
          fileName = ":/img/error.png";
          break;
+     }
      default:
          break;
      }
@@ -79,18 +90,32 @@ void CustomMessageBox::initialize(const QString &strInfo)
     m_pLabelIcon = new QLabel(this);
     QString fileName;
     switch(m_eCustomType){
+    case CUSTOM_MESSAGE_CONFIRM:
+    {
+        fileName = ":/img/confirm.png";
+        break;
+    }
     case CUSTOM_MESSAGE_QUESTION:
+    {
         fileName = ":/img/question.png";
         break;
+    }
+
     case CUSTOM_MESSAGE_INFORMATION:
+    {
         fileName = ":/img/information.png";
         break;
+    }
     case CUSTOM_MESSAGE_WARNING:
+    {
         fileName = ":/img/warning.png";
         break;
+    }
     case CUSTOM_MESSAGE_CRITICAL:
+    {
         fileName = ":/img/error.png";
         break;
+    }
     default:
         break;
     }
