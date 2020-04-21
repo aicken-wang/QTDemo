@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/confirm.png</file>
+        <file>img/confirm1.png</file>
+        <file>img/confirm2.png</file>
+        <file>img/error.png</file>
+        <file>img/error1.png</file>
+        <file>img/information.png</file>
+        <file>img/Information1.png</file>
+        <file>img/information2.png</file>
+        <file>img/information3.png</file>
+        <file>img/information4.png</file>
+        <file>img/question.png</file>
+        <file>img/question1.png</file>
+        <file>img/question2.png</file>
+        <file>img/question3.png</file>
+        <file>img/question4.png</file>
+        <file>img/warning.png</file>
+        <file>img/warning1.png</file>
+        <file>img/warning2.png</file>
+        <file>img/No.png</file>
+        <file>img/Yes.png</file>
+    </qresource>
+</RCC>
