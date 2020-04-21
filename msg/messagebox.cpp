@@ -147,7 +147,7 @@ void CustomMessageBox::initialize(const QString &strInfo)
     m_pBtnYes->setFocusPolicy(Qt::NoFocus);
 
     if(m_eCustomType == CUSTOM_MESSAGE_QUESTION)
-        m_pBtnYes->setText(tr("Yes"));
+        m_pBtnYes->setText(tr("是"));
     else
         m_pBtnYes->setText(tr("确认"));
 
@@ -160,7 +160,7 @@ void CustomMessageBox::initialize(const QString &strInfo)
         m_pBtnNo->setIcon(noPix);
         m_pBtnNo->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
         m_pBtnNo->setIconSize(QSize(30, 30));
-        m_pBtnNo->setText(tr("取消") );
+        m_pBtnNo->setText(tr("否") );
         m_pBtnNo->setFont(font);
         m_pBtnNo->setObjectName("msgBoxNoBtn");
         m_pBtnNo->setFocusPolicy(Qt::NoFocus);
