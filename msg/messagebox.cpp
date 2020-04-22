@@ -6,7 +6,8 @@
 #define MIN_WEIGHT		(100)
 #define MIN_WIDTH		(150)
 #define FONT_SIZE	    (14)
-
+#include <QDesktopWidget>
+#include <QApplication>
 CustomMessageBox::CustomMessageBox(CUSTOM_MESSAGE_TYPE type, const QString &strTitle, const QString &strInfo,QWidget *parent, Qt::WindowFlags flags)
     :QDialog(parent, flags), m_eCustomType(type)
 {
@@ -15,9 +16,23 @@ CustomMessageBox::CustomMessageBox(CUSTOM_MESSAGE_TYPE type, const QString &strT
     setWindowTitle(strTitle);
     resize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
     setMinimumSize(MIN_WIDTH, MIN_WEIGHT);
+    setIsDoubleScreen();
+
+
 }
 CustomMessageBox::~CustomMessageBox()
 {
+
+}
+
+void CustomMessageBox::setIsDoubleScreen()
+{
+    QDesktopWidget *desktop = QApplication::desktop();
+    int screenCount = desktop->screenCount();
+    if(2 == screenCount) {
+        QRect rect = desktop->screenGeometry(this);
+        this->move((desktop->width()/2 + rect.width()/2 - this->width()/2), (desktop->height() - this->height()) /2);
+    }
 
 }
 
@@ -147,9 +162,9 @@ void CustomMessageBox::initialize(const QString &strInfo)
     m_pBtnYes->setFocusPolicy(Qt::NoFocus);
 
     if(m_eCustomType == CUSTOM_MESSAGE_QUESTION)
-        m_pBtnYes->setText(tr("是"));
+        m_pBtnYes->setText(tr("Yes"));
     else
-        m_pBtnYes->setText(tr("确认"));
+        m_pBtnYes->setText(tr("yes"));
 
     connect(m_pBtnYes, SIGNAL(released()), this, SLOT(accept()));
 
@@ -160,7 +175,7 @@ void CustomMessageBox::initialize(const QString &strInfo)
         m_pBtnNo->setIcon(noPix);
         m_pBtnNo->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
         m_pBtnNo->setIconSize(QSize(30, 30));
-        m_pBtnNo->setText(tr("否") );
+        m_pBtnNo->setText(tr("No") );
         m_pBtnNo->setFont(font);
         m_pBtnNo->setObjectName("msgBoxNoBtn");
         m_pBtnNo->setFocusPolicy(Qt::NoFocus);

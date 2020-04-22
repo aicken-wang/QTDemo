@@ -46,6 +46,11 @@ public:
                      Qt::WindowFlags flags = Qt::CustomizeWindowHint | Qt::WindowTitleHint);
 
     ~CustomMessageBox();
+    /**
+     * @brief 双屏在副屏显示
+     *
+     */
+    void setIsDoubleScreen();
 
     /**
      * @brief 设置显示内容
